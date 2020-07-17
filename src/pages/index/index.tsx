@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View, Button, Text } from '@tarojs/components'
+import { AtButton } from 'taro-ui'
+import { View, Text } from '@tarojs/components'
 
 import './index.scss'
 
@@ -57,8 +58,8 @@ class Index extends Component {
     console.log('props', this.props)
     return (
       <View className='index'>
-        <Button className='add_btn' onClick={() => { dispatch({ type: `${namespace}/add` })}}>+</Button>
-        <Button className='dec_btn'>-</Button>
+        <AtButton type='primary' className='add_btn' onClick={() => { dispatch({ type: `${namespace}/add` })}}>+</AtButton>
+        <AtButton type='secondary' className='dec_btn' onClick={() => { dispatch({ type: `${namespace}/dec` })}}>-</AtButton>
         <View><Text>{app.counter}</Text></View>
         <View><Text>Hello, World</Text></View>
       </View>
